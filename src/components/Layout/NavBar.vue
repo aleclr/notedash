@@ -4,7 +4,7 @@
     aria-label="main navigation"
     role="navigation"
   >
-  <div class="container is-max-desktop">
+  <div class="container is-max-desktop px-2">
     <div class="navbar-brand">
       <div class="navbar-item is-size-4 is-family-monospace appTitle">
         Notedash
@@ -63,13 +63,9 @@
     color: white !important;
   }
 
-  .menuheader {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: auto;
-  }
+  /* .menuheader {
+
+  } */
 
   /* .navbar-menu {
     width: 50%;
