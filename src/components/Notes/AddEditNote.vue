@@ -1,12 +1,23 @@
 <template>
-  <div class="card has-background-primary p-4 mb-5">
+  <div
+    class="card p-4 mb-5"
+    :class="`has-background-${ props.bgColor }`"
+  >
+
+    <label
+      v-if="props.label"
+      class="has-text-white"
+    >
+      {{ props.label }}
+    </label>
+
     <div class="field">
         <div class="control">
             <textarea
               :value="modelValue"
               @input="$emit('update:modelValue', $event.target.value)"
               class="textarea"
-              placeholder="Add a new note..."
+              :placeholder="props.placeholder"
               ref="textareaRef"
             />
         </div>
@@ -31,6 +42,17 @@ import { ref } from 'vue';
     modelValue: {
       type: String,
       required: true
+    },
+    bgColor: {
+      type: String,
+      default: 'primary'
+    },
+    placeholder: {
+      type: String,
+      default: 'Type something...'
+    },
+    label: {
+      type: String
     }
   });
 
