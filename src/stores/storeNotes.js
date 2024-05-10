@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore, mapActions } from 'pinia'
 
 export const useStoreNotes = defineStore('storeNotes', {
   state: () => {
@@ -13,6 +13,18 @@ export const useStoreNotes = defineStore('storeNotes', {
             content: 'This is a shorter note!'
         }
       ]
+    }
+  },
+  actions: {
+    addNote(newNoteContent) {
+      let currentDate = new Date().getTime(), id = currentDate.toString();
+
+        let note = {
+            id,
+            content: newNoteContent
+        };
+
+        this.notes.unshift(note);
     }
   }
 })
