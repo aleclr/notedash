@@ -18,6 +18,6 @@
 </script>
 
 <style>
-  @import url(\Alec\FATEC\vue3course\notedash\node_modules\bulma\css\bulma.min.css);
+  @import url(C:\Alec\Udemy\VueCourse\notedash\node_modules\bulma\css\bulma.min.css);
 
 </style>
