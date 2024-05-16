@@ -20,6 +20,7 @@
         </table>
 
         <input
+          v-model="loveMe"
           class="input"
           type="text"
           placeholder="Do you like me?"
@@ -32,6 +33,12 @@
 
 import { vAutofocus } from '@/directives/vAutofocus';
 import { useStoreNotes } from '@/stores/storeNotes';
+import { useWatchCharacters } from '@/use/useWatchCharacters';
+import { ref } from 'vue';
 
     const storeNotes = useStoreNotes();
+
+    const loveMe = ref('');
+
+    useWatchCharacters(loveMe);
 </script>
