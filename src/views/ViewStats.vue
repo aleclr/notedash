@@ -40,5 +40,5 @@ import { ref } from 'vue';
 
     const loveMe = ref('');
 
-    useWatchCharacters(loveMe);
+    useWatchCharacters(loveMe, 20);
 </script>
