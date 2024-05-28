@@ -1,4 +1,5 @@
-import { defineStore, mapActions } from 'pinia'
+import { defineStore, mapActions } from 'pinia';
+import { db } from '@/js/firebase';
 
 export const useStoreNotes = defineStore('storeNotes', {
   state: () => {
