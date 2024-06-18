@@ -24,6 +24,6 @@
 </script>
 
 <style>
-  @import url(C:\Alec\Udemy\VueCourse\notedash\node_modules\bulma\css\bulma.min.css);
+  @import url(../node_modules/bulma/css/bulma.min.css);
 
 </style>
