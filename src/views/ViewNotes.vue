@@ -53,6 +53,7 @@
     import { ref } from 'vue';
     import { useStoreNotes } from '@/stores/storeNotes';
     import { useWatchCharacters } from '@/use/useWatchCharacters';
+    import { onMounted } from 'vue';
 
     const newNote = ref('');
 
@@ -70,5 +71,10 @@
     };
 
     useWatchCharacters(newNote);
+
+    onMounted(() => {
+        storeNotes.getNotes()
+    });
+
 
 </script>
