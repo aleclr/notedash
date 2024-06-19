@@ -67,8 +67,11 @@
 <script setup>
 import { createPinia } from 'pinia';
 import { computed, reactive, ref } from 'vue';
+import { useStoreAuth } from '@/stores/storeAuth';
 
 const register = ref(false);
+
+const storeAuth = useStoreAuth();
 
 const formTitle = computed(() => {
   return register.value ? 'Register' : 'Login'
@@ -86,7 +89,7 @@ const onSubmit = () => {
   }
   else {
     if (register.value) {
-      console.log('register user with these credentials', credentials);
+      storeAuth.registerUser(credentials);
     } else {
       console.log('login user with these credentials', credentials);
     }
