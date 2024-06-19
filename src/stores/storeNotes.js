@@ -62,12 +62,21 @@ export const useStoreNotes = defineStore('storeNotes', {
         this.notes = notes;
         this.notesLoaded = true;
 
+      }, error => {
+        console.log('error message: ', error.message);
       });
       
     },
 
     clearNotes() {
-      this.notes = []
+
+      this.notes = [];
+
+      //unsubscribe from any active listener
+      if (getNotesSnapshot) {
+        getNotesSnapshot();
+      };
+
     },
 
     async addNote(newNoteContent) {
